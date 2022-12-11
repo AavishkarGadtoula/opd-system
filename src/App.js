@@ -7,7 +7,7 @@ import Router1 from './Router/Router';
 function App() {
   return (
     <div>
-      <Router1 />
+      <Router1/>
     </div>
   );
 }
