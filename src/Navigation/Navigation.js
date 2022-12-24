@@ -1,49 +1,59 @@
-import { useState} from "react";
+// import { useState} from "react";
 import React from "react";
 import "./navigation.css";
-import { FaHamburger, FaRegWindowClose } from "react-icons/fa";
+// import { FaHamburger, FaRegWindowClose } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const navItems = ["Home", "About", "Services", "Contact", "Dashboard"];
+
+const navItems = ["Home", "About", "Services", "Contact", "Dashboard","Login"];
 
 const Navigation = () => {
-  const [responsiveNavClass,setresponsiveNavClass]=useState("reponsive-nav")
-  const showNavbar = () => {
-    setresponsiveNavClass("")
-  };
-  const hideNav = () => {
-    setresponsiveNavClass("reponsive-nav")
+  // const [responsiveNavClass,setresponsiveNavClass]=useState("reponsive-nav")
+  // const showNavbar = () => {
+  //   setresponsiveNavClass("")
+  // };
+  // const hideNav = () => {
+  //   setresponsiveNavClass("reponsive-nav")
     
-  }
+  // }
   return (
+    
     <div className="navigation">
-      <Link to={"/Home"} className="logo">
+      <div className="logo">
+      <Link to={"/Home"} className="logo-des">
         Digital Purja
-      </Link>
-      <div className={`navigation-list ${responsiveNavClass}`} >
+        </Link>
+        </div>
+      <div className="navigation-list" >
         {navItems.map((navItem) => {
           return (
-            <Link to={"/" + navItem} onClick={hideNav} className="navigation-item" key={navItem}>
+            
+            <Link to={"/" + navItem}  className="navigation-item" key={navItem}  >
               {navItem}
-            </Link>
+              </Link>
+              
           );
         })}
-        <div className="ham-bar nav-close" onClick={hideNav}>
+        {/* <div className="ham-bar nav-close" onClick={hideNav}>
         {" "}
         <FaRegWindowClose
           style={{ marginLeft: "12px", marginTop: "5px" }}
         />{" "}
+      </div> */}
       </div>
-      </div>
-      <div className="ham-bar" onClick={showNavbar}>
+      {/* <div className="ham-bar" onClick={showNavbar}>
         {" "}
-        <FaHamburger style={{ marginLeft: "12px", marginTop: "5px" }} />{" "}
-      </div>
+          <FaHamburger
+            style={{ marginLeft: "12px", marginTop: "5px" }} 
+            
+            />{" "}
+      </div> */}
       
-      <div className="nav-btn">
-        <button className=" btn-design">Login</button>
+      {/* <div className="nav-btn">
+          
+          <Link to={"/Login"} className="btn-design">Login</Link>
+      </div> */}
       </div>
-    </div>
   );
 };
 
